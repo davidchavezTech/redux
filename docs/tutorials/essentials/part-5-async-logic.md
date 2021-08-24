@@ -764,6 +764,7 @@ export const AddPostForm = () => {
           addNewPost({ title, content, user: userId })
         )
         unwrapResult(resultAction)
+        dispatch(postAdded(resultAction.payload.title, resultAction.payload.content, resultAction.payload.user))
         setTitle('')
         setContent('')
         setUserId('')
